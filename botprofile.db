@@ -1,0 +1,1168 @@
+//----------------------------------------------------------------------------
+// BotProfile.db
+// Author: Justin A. Boney, My YT channel >>(www.youtube.com/channel/UCF6sK9PaONILzTd42baWxkA/videos?view_as=subscriber)
+// If any questions contact me on steam at tNzxX or my email justinboney24@gmail.com and my YT channel
+// This database defines bot "personalities".
+// (WARNING) Dont change this bot profile or bots many not work.
+//
+// 2018: BOT EDITS, PROFILES, NAMES and SKILLS V2.2 BY tNzxX
+// New bot names, skill and weapon trees. Aim and movement for bots should now simulate keyboard and mouse and not a controller.
+// EasyBots are the Hardest bots Example Easy>Normal>Hard>Expert.
+// Overall difficultly increase for all bot skills.
+// v 1: Added new bot skill, Huge aim speed increase, removed duplicate name, switch profiles of certain bots.
+// Limitations: Bots no longer buy pistols, this was patched out after a certain update. During eco they will not buy a better pistol or save, instead they will just buy a random weapon that they can afford until they can buy the one in their next Weapon Preference.
+// v 2: Added buy limit for higher leveled bots (saving)
+// v 3: Rebalanced Aim Focus for Normal to Easy level. Added Separate Profiles for lower leveled snipers so that they can now aim properly. Minor name changes. Minor profile and gun tree changes. Minor Look Angle changes. Bug Fixes.
+//
+//----------------------------------------------------------------------------
+
+//
+// All profiles begin with this data and overwrite their own
+//
+Default
+Skill = 100
+Aggression = 100
+ReactionTime = 0.0000000000000000000000001
+AttackDelay = 0
+Teamwork = 100
+AimFocusInitial = 100 // initial focus spread in degrees (from desired center)
+AimFocusDecay = 0.00001 // how much focus shrinks per second (.25 = 25% of size after 1 sec)
+AimFocusOffsetScale = 0.00001 // controls accuracy when tracking to target (0 == perfect, should always be < 1)
+AimfocusInterval = 0.00001 // how often focus is adjusted (smaller intervals means better movement tracking)
+WeaponPreference = none
+Cost = 0
+Difficulty = EASY
+VoicePitch = 100
+Skin = 0
+LookAngleMaxAccelNormal = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.9.9.9.9
+LookAngleStiffnessNormal = 5000.0
+LookAngleDampingNormal = 45.0
+LookAngleMaxAccelAttacking = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.9.9.9.9
+LookAngleStiffnessAttacking = 5200.0
+LookAngleDampingAttacking = 40.100
+End
+
+//LookAngleMaxAccelNormal = 2000.0
+//LookAngleStiffnessNormal = 100.0
+//LookAngleDampingNormal = 25.0
+//LookAngleMaxAccelAttacking = 3000.0
+//LookAngleStiffnessAttacking = 150.0
+//LookAngleDampingAttacking = 30.0
+
+//----------------------------------------------------------------------------
+
+//
+// These templates inherit from Default and override with their values
+// The name of the template defines a type that is used by individual bot profiles
+//
+
+// weapon preference templates
+
+Template SniperPro
+WeaponPreference = awp
+WeaponPreference = p250
+WeaponPreference = deagle
+WeaponPreference = ump45
+WeaponPreference = scout
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = mp7
+WeaponPreference = mac10
+WeaponPreference = famas
+WeaponPreference = galilar
+WeaponPreference = p250
+WeaponPreference = tec9
+End
+
+Template SniperProT
+WeaponPreference = awp
+WeaponPreference = p250
+WeaponPreference = deagle
+WeaponPreference = ump45
+WeaponPreference = scout
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = mac10
+WeaponPreference = mp7
+WeaponPreference = galilar
+WeaponPreference = famas
+WeaponPreference = tec9
+WeaponPreference = p250
+End
+
+Template Rifle
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = deagle
+WeaponPreference = p250
+WeaponPreference = ump45
+WeaponPreference = deagle
+WeaponPreference = awp
+WeaponPreference = mp7
+WeaponPreference = mac10
+WeaponPreference = ump45
+WeaponPreference = galilar
+WeaponPreference = famas
+End
+
+Template RifleT
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = deagle
+WeaponPreference = tec9
+WeaponPreference = ump45
+WeaponPreference = p250
+WeaponPreference = awp
+WeaponPreference = mac10
+WeaponPreference = p250
+WeaponPreference = mp7
+WeaponPreference = galilar
+WeaponPreference = famas
+End
+
+Template Punch
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = famas
+WeaponPreference = deagle
+WeaponPreference = ump45
+WeaponPreference = mac10
+End
+
+Template PunchT
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = galilar
+WeaponPreference = deagle
+WeaponPreference = ump45
+WeaponPreference = mac10
+End
+
+Template Sniper
+WeaponPreference = awp
+WeaponPreference = fiveseven
+WeaponPreference = scout
+WeaponPreference = mp7
+WeaponPreference = mac10
+WeaponPreference = Deagle
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = p250
+WeaponPreference = defuser
+WeaponPreference = none
+WeaponPreference = none
+End
+
+Template Power
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = deagle
+WeaponPreference = mp7
+WeaponPreference = mac10
+WeaponPreference = mag7
+Aggression = 100
+End
+
+Template Shotgun
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = deagle
+WeaponPreference = scout
+WeaponPreference = mag7
+WeaponPreference = fiveseven
+End
+
+Template Spray
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = mac10
+WeaponPreference = deagle
+WeaponPreference = fiveseven
+End
+
+Template AutoSniper
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = deagle
+WeaponPreference = famas
+WeaponPreference = mp7
+End
+
+Template AutoSniperT
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = deagle
+WeaponPreference = galilar
+WeaponPreference = mp7
+End
+
+Template OtherWeapons
+WeaponPreference = ak47
+WeaponPreference = m4a1
+WeaponPreference = deagle
+WeaponPreference = fiveseven
+WeaponPreference = awp
+WeaponPreference = scout
+WeaponPreference = tec9
+WeaponPreference = defuser
+WeaponPreference = galilar
+WeaponPreference = famas
+WeaponPreference = p250
+End
+
+// skill templates
+Template EliteAwp
+Skill = 15
+Rank = 2001
+Cost = 3000
+Aggression = 100
+Teamwork = 45
+AttackDelay = 0
+Difficulty = EASY
+ReactionTime = 0.00000000000000000000000000000000000000000000000000001
+VoicePitch = 100
+AimFocusInitial = 0.00001
+AimFocusDecay = 0.0000001
+AimFocusOffsetScale = 0.0000000000000000000000001
+AimfocusInterval = 0.0000000000001
+End
+
+Template ElitePassive
+Skill = 100
+Rank = 2000
+Cost = 3000
+Aggression = 95
+AttackDelay = 0
+Teamwork = 71
+Difficulty = EXPERT
+ReactionTime = 0.05
+VoicePitch = 95
+AimFocusInitial = 0.5
+AimFocusDecay = 0.1
+AimFocusOffsetScale = 0.05
+AimfocusInterval = 0.05
+End
+
+Template Elite
+Skill = 90
+Rank = 2000
+Cost = 3000
+Aggression = 80
+Teamwork = 72
+AttackDelay = 0
+ReactionTime = 0.2-
+Difficulty = EXPERT
+VoicePitch = 85
+AimFocusInitial = 2
+AimFocusDecay = 0.2
+AimFocusOffsetScale = 0.15
+AimfocusInterval = 0.20
+End
+
+Template ExpertAwp
+Skill = 50
+Rank = 1700
+Cost = 2200
+Aggression = 15
+AttackDelay = 0
+Difficulty = EXPERT+Hard
+ReactionTime = 0.0001
+VoicePitch = 70
+AimFocusInitial = 0.28
+AimFocusDecay = 0.28
+AimFocusOffsetScale = 0.28
+AimfocusInterval = 0.28
+End
+
+Template ExpertPassive
+Skill = 46
+Rank = 1650
+Cost = 2200
+Aggression = 10
+AttackDelay = 0
+Teamwork = 72
+Difficulty = Hard
+ReactionTime = 0.0001
+VoicePitch = 70
+AimFocusInitial = 0.26
+AimFocusDecay = 0.26
+AimFocusOffsetScale = 0.26
+AimfocusInterval = 0.26
+End
+
+Template Expert
+Skill = 46
+Rank = 1600
+Cost = 2200
+Aggression = 5
+Teamwork = 73
+AttackDelay = 0
+ReactionTime = 0.0001
+Difficulty = Hard
+VoicePitch = 88
+AimFocusInitial = 0.25
+AimFocusDecay = 0.25
+AimFocusOffsetScale = 0.25
+AimfocusInterval = 0.25
+End
+
+Template VeryHard
+Skill = 45
+Rank = 1400
+Cost = 1200
+Aggression = 7
+AttackDelay = 0
+ReactionTime = 0.25
+Difficulty = Hard
+VoicePitch = 92
+AimFocusInitial = 0.22
+AimFocusDecay = 0.22
+AimFocusOffsetScale = 0.22
+AimfocusInterval = 0.22
+End
+
+Template VeryHardARG
+Skill = 45
+Rank = 1400
+Aggression = 9
+AttackDelay = 0
+ReactionTime = 0.00001
+Difficulty = Hard
+VoicePitch = 92
+AimFocusInitial = 0.20
+AimFocusDecay = 0.20
+AimFocusOffsetScale = 0.20
+AimfocusInterval = 0.20
+End
+
+Template Hard
+Skill = 45
+Rank = 1300
+Cost = 1200
+Aggression = 13
+AttackDelay = 0
+ReactionTime = 0.00001
+Teamwork = 74
+Difficulty = HARD
+VoicePitch = 94
+AimFocusInitial = 0.18
+AimFocusDecay = 0.18
+AimFocusOffsetScale = 0.18
+AimfocusInterval = 0.18
+End
+
+Template HardARG
+Skill = 44
+Rank = 1300
+Aggression = 12
+AttackDelay = 0
+ReactionTime = 0.00001
+Teamwork = 75
+Difficulty = HARD
+VoicePitch = 94
+AimFocusInitial = 0.15
+AimFocusDecay = 0.15
+AimFocusOffsetScale = 0.15
+AimfocusInterval = 0.15
+End
+
+Template Tough
+Skill = 43
+Rank = 1100
+Aggression = 11
+AttackDelay = 0
+ReactionTime = 0.00001
+Teamwork = 76
+Difficulty = NORMAL
+VoicePitch = 96
+AimFocusInitial = 0.018
+AimFocusDecay = 0.018
+AimFocusOffsetScale = 0.018
+AimfocusInterval = 0.018
+End
+
+Template ToughARG
+Skill = 41
+Rank = 1100
+Aggression = 15
+AttackDelay = 0
+ReactionTime = 0.00001
+Teamwork = 77
+Difficulty = NORMAL
+VoicePitch = 96
+AimFocusInitial = 0.015
+AimFocusDecay = 0.015
+AimFocusOffsetScale = 0.015
+AimfocusInterval = 0.015
+End
+
+Template ToughSNIPER
+Skill = 45
+Rank = 1100
+Aggression = 15
+AttackDelay = 0
+ReactionTime = 0.00001
+Teamwork = 78
+Difficulty = NORMAL
+VoicePitch = 96
+AimFocusInitial = 0.020
+AimFocusDecay = 0.020
+AimFocusOffsetScale = 0.020
+AimfocusInterval = 0.020
+End
+
+Template Normal
+Skill = 44
+Rank = 1000
+Aggression = 15
+Teamwork = 79
+AttackDelay = 0
+ReactionTime = 0.00001
+Difficulty = NORMAL
+AimFocusInitial = 0.020
+AimFocusDecay = 0.020
+AimFocusOffsetScale = 0.020
+AimfocusInterval = 0.020
+End
+
+Template NormalARG
+Skill = 44
+Rank = 1000
+Aggression = 15
+Teamwork = 80
+AttackDelay = 0
+ReactionTime = 0.00001
+Difficulty = NORMAL
+AimFocusInitial = 0.024
+AimFocusDecay = 0.024
+AimFocusOffsetScale = 0.024
+AimfocusInterval = 0.024
+End
+
+Template NormalSNIPER
+Skill = 45
+Rank = 1000
+Aggression = 15
+Teamwork = 85
+AttackDelay = 0
+ReactionTime = 0.00001
+Difficulty = NORMAL
+AimFocusInitial = 0.025
+AimFocusDecay = 0.0025
+AimFocusOffsetScale = 0.025
+AimfocusInterval = 0.025
+End
+
+Template Fair
+Skill = 24
+Rank = 850
+Aggression = 25
+Teamwork = 90
+ReactionTime = 0.000000000000000000000001
+AttackDelay = 0
+Difficulty = EASY
+VoicePitch = 105
+AimFocusInitial = 0.00001
+AimFocusDecay = 0.00001
+AimFocusOffsetScale = 0.00001
+AimfocusInterval = 0.00001
+End
+
+Template FairSNIPER
+Skill = 25
+Rank = 850
+Aggression = 25
+Teamwork = 90
+ReactionTime = 0.000000000000000000000001
+AttackDelay = 0
+Difficulty = EASY
+VoicePitch = 105
+AimFocusInitial = 0.00001
+AimFocusDecay = 0.00001
+AimFocusOffsetScale = 0.00001
+AimfocusInterval = 0.00001
+End
+
+Template Easy
+Skill = 100
+Rank = 500
+Teamwork = 100
+Aggression = 55
+ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
+AttackDelay = 0
+Difficulty = EASY
+VoicePitch = 110
+AimFocusInitial = 0.00001
+AimFocusDecay = 0.0000001
+AimFocusOffsetScale = 0.0000000000000000000000001
+AimfocusInterval = 0.0000000000001
+End
+
+//----------------------------------------------------------------------------
+//
+// These are the individual bot profiles, which inherit first from
+// Default and then the specified Template(s), in order
+//
+
+EliteAwp+SniperPro+SniperProT "arT"
+VoicePitch = 95
+End
+
+EliteAwp+SniperPro+SniperProT "GuardiaN"
+VoicePitch = 105
+End
+
+EliteAwp+SniperPro+SniperProT "kennyS"
+VoicePitch = 84
+End
+
+EliteAwp+SniperPro+SniperProT "FALLEN"
+VoicePitch = 110
+End
+
+ElitePassive+Rifle "Tagz"
+VoicePitch = 80
+End
+
+ElitePassive+Rifle "heazt"
+VoicePitch = 90
+End
+
+ElitePassive+Rifle "THAT GUY"
+VoicePitch = 96
+End
+
+Elite+Rifle "BOSEZ"
+VoicePitch = 105
+End
+
+EliteAwp+Easy+SniperPro+SniperProT "G44.kingz"
+VoicePitch = 84
+End
+
+Easy+Rifle+Riflet G44.UniFoRmxX
+VoicePitch = 86
+End
+
+Fair+Riflet+Rifle G44.PayZ
+VoicePitch = 80
+End
+
+Easy+Riflet+Rifle "G44.sEveX"
+VoicePitch = 90
+End
+
+Easy+Fair+Rifle+Riflet G44.NaVs
+VoicePitch = 98
+End
+
+ElitePassive+Rifle "PERSONz"
+VoicePitch = 110
+End
+
+EliteAwp+SniperPro+SniperProT Device
+VoicePitch = 80
+End
+
+ElitePassive+Riflet GOSZD
+VoicePitch = 112
+End
+
+Elite+Riflet "Teaz"
+VoicePitch = 88
+End
+
+//----------------------------------------
+
+ExpertPassive+Rifle Raz
+VoicePitch = 81
+End
+
+ExpertPassive+Rifle MaNgLeR
+VoicePitch = 86
+End
+
+ExpertPassive+Rifle "guyxX"
+VoicePitch = 85
+End
+
+Expert+Rifle [xX]RAZOR
+VoicePitch = 100
+End
+
+ExpertPassive+Rifle [xX]KiLLcon
+VoicePitch = 95
+End
+
+ExpertAwp+SniperPro+SniperProT [xX]FaLl
+VoicePitch = 115
+End
+
+ExpertAwp+SniperPro+SniperProT [xX]OveRtop
+VoicePitch = 87
+End
+
+Expert+Riflet [xX]bre@kd0wn
+VoicePitch = 91
+End
+
+Expert+Rifle [OPM]Trend_Tracker
+VoicePitch = 101
+End
+
+Expert+Rifle [xX]WhiteGod
+VoicePitch = 99
+End
+
+ExpertPassive+Riflet [xX]aLin
+VoicePitch = 100
+End
+
+ExpertAwp+SniperProt+SniperPro "xXloveXx"
+VoicePitch = 80
+End
+
+//----------------------------------------
+
+VeryHard+rifle deathJoiner
+VoicePitch = 110
+End
+
+VeryHard+SniperProT+SniperPro "Slowshot"
+VoicePitch = 93
+End
+
+VeryHard+SniperPro+SniperProT Dayzx
+VoicePitch = 98
+End
+
+VeryHardARG+Rifle TakeOFF
+VoicePitch = 100
+End
+
+VeryHardARG+RifleT OPGOD
+VoicePitch = 86
+End
+
+VeryHard+Rifle "fortnutxX"
+VoicePitch = 100
+End
+
+VeryHardARG+RifleT "Ligma"
+VoicePitch = 86
+End
+
+VeryHard+RifleT "aimer"
+VoicePitch = 86
+End
+
+
+//----------------------------------------
+
+HardARG+Rifle tot-xX
+VoicePitch = 95
+End
+
+Hard+RifleT xX-mow
+VoicePitch = 90
+End
+
+Hard+Rifle [xX]NeSSte
+VoicePitch = 110
+End
+
+Hard+SniperPro+SniperProT [xX]TheSiS
+VoicePitch = 95
+End
+
+HardARG+Rifle XXxxxtazeraxxxXX
+VoicePitch = 81
+End
+
+Hard+Spray [xX]spray
+VoicePitch = 102
+End
+
+Hard+riflet [xX]spafAcE
+VoicePitch = 98
+End
+
+HardARG+RifleT "ManxX"
+VoicePitch = 96
+End
+
+Hard+Riflet sperxXzoid
+VoicePitch = 103
+End
+
+HardARG+Rifle [xX]RangerxX
+VoicePitch = 105
+End
+
+Hard+Rifle MarkxXman
+VoicePitch = 97
+End
+
+Hard+Rifle HarDEbAlLerxX
+VoicePitch = 84
+End
+
+Hard+Rifle S0renxX
+VoicePitch = 90
+End
+
+HardARG+Rifle [xX]lEEt
+VoicePitch = 98
+End
+
+Hard+SniperPro+SniperProT Nothi3naTa11xX
+VoicePitch = 110
+End
+
+Hard+riflet PeoplemansxX
+VoicePitch = 103
+End
+
+HardARG+rifle RabbixX
+VoicePitch = 110
+End
+
+//----------------------------------------
+
+ToughSNIPER+SniperPro+SniperPro NEedzxX
+VoicePitch = 120
+End
+
+ToughSNIPER+SniperPro+SniperProT MasterxX
+VoicePitch = 121
+End
+
+Tough+Rifle "Manilla FolderxX"
+VoicePitch = 100
+End
+
+Fair+SniperPro+SniperProT "ablej"
+VoicePitch = 104
+End
+
+Tough+RifleT TrolzzxX
+VoicePitch = 98
+End
+
+Tough+rifle AzzxX
+VoicePitch = 100
+End
+
+Tough+Rifle iwallowcomexX98
+VoicePitch = 102
+End
+
+Tough+Rifle FoozxX
+VoicePitch = 95
+End
+
+Tough+Rifle "WARDELL"
+VoicePitch = 95
+End
+
+ToughARG+RifleT fREAKAZOiD
+VoicePitch = 110
+End
+
+ToughARG+RifleT+Rifle "neptune"
+VoicePitch = 112
+End
+
+ToughARG+SniperPro+SniperProT koosta
+VoicePitch = 90
+End
+
+ToughARG+Rifle+Sniperpro "Nifty"
+VoicePitch = 115
+End
+
+ToughARG+Rifle+RifleT "Laski"
+VoicePitch = 107
+End
+
+ToughARG+Rifle "anger"
+VoicePitch = 102
+End
+
+ToughARG+RifleT+Rifle "hazed"
+VoicePitch = 98
+End
+
+ToughARG+Rifle+RifleT "Polen"
+VoicePitch = 100
+End
+
+Tough+Rifle+RifleT Pancc
+VoicePitch = 95
+End
+
+ToughARG+SniperPro+SniperProT HEN1
+VoicePitch = 86
+End
+
+ToughARG+Rifle+RifleT LUCAS1
+VoicePitch = 100
+End
+
+ToughARG+Rifle+RifleT NEKIZ
+VoicePitch = 95
+End
+
+//----------------------------------------
+
+Normal+Rifle+RifleT "xXNoobXx"
+VoicePitch = 105
+End
+
+NormalARG+Rifle+RifleT "likeroO"
+VoicePitch = 90
+End
+
+Normal+Rifle+RifleT [o0]killer
+VoicePitch = 105
+End
+
+Normal+Rifle+RifleT "[o0]Terry"
+VoicePitch = 90
+End
+
+NormalARG+Rifle+RifleT "Zellis"
+VoicePitch = 100
+End
+
+NormalSNIPER+SniperPro+SniperProT SANDwithkiller
+VoicePitch = 107
+End
+
+NormalSNIPER+SniperPro+SniperProT Shader_xX
+VoicePitch = 104
+End
+
+NormalARG+RifleT+Rifle ZerXx
+VoicePitch = 110
+End
+
+NormalARG+Riflet+RifleT "dephh"
+VoicePitch = 95
+End
+
+NormalARG+Riflet+Rifle Rickeh
+VoicePitch = 112
+End
+
+NormalSNIPER+SniperPro+SniperProT TennersxX
+VoicePitch = 111
+End
+
+NormalARG+SniperPro+SniperProT "ShahZAM"
+VoicePitch = 115
+End
+
+Normal+Rifle+RifleT "stanislaw"
+VoicePitch = 112
+End
+
+Easy+Rifle+RifleT "AdreN"
+VoicePitch = 96
+End
+
+Easy+Rifle+RifleT "kioShiMa"
+VoicePitch = 98
+End
+
+Easy+Rifle+RifleT "smooya"
+VoicePitch = 110
+End
+
+Fair+Rifle+RifleT "tiziaN"
+VoicePitch = 95
+End
+
+Easy+Fair+Rifle+RifleT "tabseN"
+VoicePitch = 100
+End
+
+HardARG+Rifle+RifleT "gob_b"
+VoicePitch = 99
+End
+
+Easy+Rifle+RifleT n0thing
+VoicePitch = 98
+End
+
+Easy+RifleT+Rifle Magisk
+VoicePitch = 105
+End
+
+Fair+SniperPro+SniperProT draken
+VoicePitch = 115
+End
+
+Easy+RifleT+Rifle "dupreeh"
+VoicePitch = 110
+End
+
+Easy+Rifle+RifleT Xyp9x
+VoicePitch = 92
+End
+
+//----------------------------------------
+
+Fair+RifleT+Rifle "chopper"
+VoicePitch = 110
+End
+
+Fair+SniperPro+SniperProT jR
+VoicePitch = 100
+End
+
+Fair+Rifle+RifleT mir
+VoicePitch = 99
+End
+
+Fair+RifleT+Rifle keshandr
+VoicePitch = 120
+End
+
+Fair+RifleT+Rifle "hutji"
+VoicePitch = 111
+End
+
+Fair+Rifle+Rifelet+SniperPro+SniperProT "kNgV-"
+VoicePitch = 98
+End
+
+Fair+SniperPro+SniperProT JW
+VoicePitch = 112
+End
+
+Fair+Rifle+RifleT gla1ve
+VoicePitch = 90
+End
+
+Fair+RifleT+Rifle "shroud"
+VoicePitch = 120
+End
+
+Fair+Rifle+RifleT ngiN
+VoicePitch = 118
+End
+
+Fair+SniperPro+SniperProT paz
+VoicePitch = 116
+End
+
+Fair+Rifle+RifleT Calyx
+VoicePitch = 114
+End
+
+Easy+Fair+RifleT+Rifle XANTARES
+VoicePitch = 110
+End
+
+Fair+Rifle+Riflet "MICHU"
+VoicePitch = 98
+End
+
+Fair+RifleT+Rifle byali
+VoicePitch = 92
+End
+
+Fair+SniperPro+SniperProT pashBiceps
+VoicePitch = 113
+End
+
+Fair+Rifle+RifleT "MAJ3R"
+VoicePitch = 114
+End
+
+Fair+RifleT+RifleT "NEO"
+VoicePitch = 115
+End
+
+Fair+Rifle+RifleT "electronic"
+VoicePitch = 100
+End
+
+Fair+RifleT+Rifle "Zeus"
+VoicePitch = 102
+End
+
+Fair+Rifle+RifleT "Golden"
+VoicePitch = 98
+End
+
+Fair+RifleT+Rifle NBK
+VoicePitch = 96
+End
+
+Fair+Rifle+RifleT "BoombI4"
+VoicePitch = 94
+End
+
+//----------------------------------------
+
+Easy+Rifle+RifleT "Scream"
+VoicePitch = 100
+End
+
+Easy+RifleT+Rifle NiKo
+VoicePitch = 110
+End
+
+Easy+Rifle+RifleT shox
+VoicePitch = 120
+End
+
+Easy+RifleT+Rifle apEX
+VoicePitch = 99
+End
+
+Easy+Rifle+RifleT Fer
+VoicePitch = 120
+End
+
+Easy+RifleT+Rifle Krimz
+VoicePitch = 125
+End
+
+Easy+Rifle+RifleT olofmeister
+VoicePitch = 110
+End
+
+Easy+RifleT+Rifle Snax
+VoicePitch = 100
+End
+
+Easy+Rifle+RifleT TACO
+VoicePitch = 112
+End
+
+Easy+RifleT+Rifle Coldzera
+VoicePitch = 121
+End
+
+Easy+RifleT+Rifle bodyy
+VoicePitch = 99
+End
+
+Easy+Rifle+RifleT Get_Right
+VoicePitch = 119
+End
+
+Easy+SniperPro+SniperProT jdm64
+VoicePitch = 118
+End
+
+Easy+RifleT++Rifle "dennis"
+VoicePitch = 117
+End
+
+Easy+RifleT+Rifle Stewie2k
+VoicePitch = 116
+End
+
+Easy+Rifle+RifleT "felps"
+VoicePitch = 115
+End
+
+Easy+RifleT+Rifle "LUCAS1"
+VoicePitch = 114
+End
+
+Easy+Rifle+RifleT tarik
+VoicePitch = 112
+End
+
+Easy+RifleT+Rifle autimatic
+VoicePitch = 111
+End
+
+Easy+Rifle+RifleT RUSH
+VoicePitch = 110
+End
+
+Easy+SniperPro+SniperProT s1mple
+VoicePitch = 109
+End
+
+Easy+RifleT+Rifle rain
+VoicePitch = 108
+End
+
+Easy+Rifle+RifleT "nitr0"
+VoicePitch = 122
+End
+
+Easy+SniperPro+SniperProT device
+VoicePitch = 120
+End
+
+Easy+RifleT+Rifle steel
+VoicePitch = 125
+End
+
+Easy+Rifle+RifleT Edward
+VoicePitch = 92
+End
+
+Easy+RifleT+Rifle Twistzz
+VoicePitch = 100
+End
+
+Easy+Rifle+RifleT flamie
+VoicePitch = 102
+End
+
+Easy+RifleT+Rifle Hobbit
+VoicePitch = 104
+End
+
+Easy+Rifle+RifleT Get_RiGhT
+VoicePitch = 108
+End
+
+Easy+RifleT+Rifle f0rest
+VoicePitch = 95
+End
+
+Easy+Rifle+RifleT NAF
+VoicePitch = 100
+End
+
+Easy+RifleT+Rifle REZ
+VoicePitch = 120
+End
+
+Easy+Rifle+RifleT EliGE
+VoicePitch = 112
+End
+
+Easy+RifleT+Rifle flusha
+VoicePitch = 99
+End
+
+Easy+Rifle+RifleT Lekr0
+VoicePitch = 137
+End
+
+Easy+Rifle+RifleT yuurih
+VoicePitch = 136
+End
+
+Easy+Rifle+RifleT VINI
+VoicePitch = 135
+End
+
+Easy+Rifle+RifleT KSCERATO
+VoicePitch = 138
+End
+
+Easy+Rifle+RifleT ablej
+VoicePitch = 139
+End
